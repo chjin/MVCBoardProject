@@ -3,6 +3,8 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by cjw on 2016-03-31.
@@ -45,7 +47,32 @@ public class BoardDAO {
     }
 
     //4. 기능.
+    //1)목록보이기 ==>SELECT
+    public List<BoardDTO> boardListData(int page){
+        List<BoardDTO> list=new ArrayList<>();
 
+        try{
+            getConnection();
+
+            String sql="SELECT no,subject,name,regdate,hit,group_tab,TO_CHAR(regdate,'YYYY-MM-DD') ";
+
+
+
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }finally {
+            disConnection();
+        }
+
+
+
+
+
+
+
+        return list;
+    }
 
 }
 
